@@ -2,14 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "argh.h"
 
+#define USAGE "example [-l|--lz4] [-h N|--head N] [-p|--prefix] POS1 ... POSN"
+
 int main(int argc, char **argv) {
-    if (strcmp(argv[argc - 1], "-h") == 0 || strcmp(argv[argc - 1], "--help") == 0) {
-        fprintf(stderr, "usage: example [-l|--lz4] [-h N|--head N] [-p|--prefix] POS1 ... POSN\n");
-        exit(1);
-    }
     bool prefix = false;
     bool lz4 = false;
     int head = 0;

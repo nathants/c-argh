@@ -5,15 +5,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define ARGH_PARSE                              \
-    bool argh_used = true;                      \
-    bool argh_repeat = false;                   \
-    bool argh_val = false;                      \
-    char *ARGH_ARGV[argc];                      \
-    char *argh_name;                            \
-    int ARGH_ARGC = 0;                          \
-    int argh_diff = 0;                          \
-    int argh_offset = 0;                        \
+#define ARGH_PARSE                                                                      \
+    if (strcmp(argv[argc - 1], "-h") == 0 || strcmp(argv[argc - 1], "--help") == 0) {   \
+        fprintf(stderr, "usage: %s\n", USAGE);                                          \
+        exit(1);                                                                        \
+    }                                                                                   \
+    bool argh_used = true;                                                              \
+    bool argh_repeat = false;                                                           \
+    bool argh_val = false;                                                              \
+    char *ARGH_ARGV[argc];                                                              \
+    char *argh_name;                                                                    \
+    int ARGH_ARGC = 0;                                                                  \
+    int argh_diff = 0;                                                                  \
+    int argh_offset = 0;                                                                \
     while(argh_offset < argc)
 
 // check for a flag which is either present or not
