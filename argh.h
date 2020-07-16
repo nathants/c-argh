@@ -25,7 +25,7 @@
     /* ARGH_VAL cannot be used with ARGH_BOOL */                                                                                                                          \
     (argh_name = NULL,                                                                                                                                                    \
           /* short name exact match */                                                                                                                                    \
-     ((    0 ==  strcmp(argv[argh_offset], short_name)                                                                                                                    \
+     ((     0 ==  strcmp(argv[argh_offset], short_name)                                                                                                                   \
           /* short name prefix match, for specify multiple short names with a single param, -xyz instead -x -y -z. this mutates argv for the next pass, -xyz to -yz  */   \
        || ((0 == strncmp(argv[argh_offset], short_name, 2) && strlen(argv[argh_offset]) > 2 && (argv[argh_offset]++, argv[argh_offset][0] = '-', argh_repeat = true)))    \
           /* long name exact match */                                                                                                                                     \
