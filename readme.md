@@ -1,3 +1,5 @@
+# c-argh
+
 ## why
 
 minimal [argument parsing](https://github.com/nathants/c-argh/blob/master/example.c) shouldn't require a hundred lines of code.
